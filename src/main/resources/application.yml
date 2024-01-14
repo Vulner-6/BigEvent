@@ -1,0 +1,13 @@
+# 数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/big_event
+    username: root
+    password: root
+
+# 开启数据库字段下划线与驼峰命名转换
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--这里是 ArticleMapper.java 接口文件的地址-->
+<mapper namespace="com.my.bigevent.mapper.ArticleMapper">
+    <!--动态 sql 写法，真实项目中常用-->
+    <select id="list" resultType="com.my.bigevent.pojo.Article">
+        select * from article
+        <where>
+            <if test="categoryId!=null">
+                category_id=#{categoryId}
+            </if>
+
+            <if test="state!=null">
+                and state=#{state}
+            </if>
+        and create_user=#{userId}
+        </where>
+    </select>
+</mapper>
